@@ -9,6 +9,9 @@ permalink: /
 ## Context  
 An online streaming service has experienced a worrying uptick in customer cancellations over the past quarter. Leadership suspects hidden patterns in subscription behavior and listening habits are driving churn—and they want a data-driven diagnosis before building any prediction models.
 
+## Scope  
+Identify customers at high risk of canceling their subscription based on their streaming activity and account status over the past three months.
+
 ## Objective  
 1. Scope the churn-analysis project end to end  
 2. Ingest customer and listening-history data into Python  
