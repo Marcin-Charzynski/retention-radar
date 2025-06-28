@@ -8,6 +8,10 @@ permalink: /
 
 ![Cancellation Rate]({{ site.baseurl }}/assets/images/cancellation_rate.png)
 
+## Key Insights  
+- Customers who received a discount exhibit a significantly higher cancellation rate than those who didn’t.  
+- This suggests discount-driven sign-ups may lack long-term commitment, pointing to a need for targeted retention strategies.
+
 ## Context  
 An online streaming service has experienced a worrying uptick in customer cancellations over the past quarter. Leadership suspects hidden patterns in subscription behavior and listening habits are driving churn—and they want a data-driven diagnosis before building any prediction models.
 
@@ -29,21 +33,37 @@ Identify customers at high risk of canceling their subscription based on their s
    - Loaded customer profiles and streaming-history CSVs using Pandas  
    - Verified schema, identified missing or invalid entries, then dropped irreparable rows  
 3. Data cleaning & feature derivation  
-   - Harmonized date fields (subscription start, last play, cancellation) to datetime  
-   - Imputed or removed missing values in key columns (plan_type, region)  
+   - Harmonized date fields (subscription start, cancellation) to datetime  
+   - Imputed or removed missing values in key columns (subscription rate , subscription plan)  
    - Engineered new features: tenure_days, avg_listens_per_day, last_month_play_count, genre_diversity_score  
 4. Exploratory analysis  
    - Profiled each table: distributions of subscription lengths, play counts, churn rates  
    - Joined on customer_id to correlate listening patterns with cancellations  
    - Used box plots and density estimates to highlight churner vs. retainer differences  
+   ### Distribution of Listening Sessions  
+   ![Distribution of Listening Sessions per Customer]({{ site.baseurl }}/assets/images/listening_sessions_distribution.png)  
+   Most users had about 3 unique listening sessions in the last three months, while roughly 20% logged only 1–2 sessions. This low-engagement group warrants further analysis to see if it truly correlates with higher churn and could inform targeted re-engagement strategies.
+
+   ### Genre Popularity  
+   | Genre      | Count |
+   |------------|------:|
+   | Pop        |   267 |
+   | Hip Hop    |    88 |
+   | Country    |    68 |
+   | Jazz       |    48 |
+   | Comedy     |    19 |
+   | True Crime |    15 |
+
+   Pop dominates with more than three times the listens of the next genre. Understanding whether fans of particular genres churn at different rates could uncover new retention levers.
+
 5. Final DataFrame prep  
    - Isolated numeric predictors with no nulls  
    - Scaled features and flagged high-risk segments (e.g., low-engagement, free-trial users)  
    - Produced a feature-correlation heatmap against churn
 
 ## Output  
-- A clean, feature-rich Pandas DataFrame (`churn_ready_df.csv`) primed for machine learning  
-- A Jupyter notebook showcasing EDA visualizations: histograms, boxplots, heatmaps  
+- A clean, feature-rich Pandas DataFrame primed for machine learning  
+- A Jupyter notebook showcasing EDA visualizations 
 - A concise slide deck summarizing top churn drivers and recommended next steps for modeling
 
 ## Design Principles  
