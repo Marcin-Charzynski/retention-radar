@@ -6,6 +6,8 @@ permalink: /
 
 # Retention Radar: Customer Churn Data Prep
 
+![Cancellation Rate]({{ site.baseurl }}/assets/images/cancellation_rate.png)
+
 ## Context  
 An online streaming service has experienced a worrying uptick in customer cancellations over the past quarter. Leadership suspects hidden patterns in subscription behavior and listening habits are driving churn—and they want a data-driven diagnosis before building any prediction models.
 
