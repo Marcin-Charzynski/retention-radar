@@ -1,7 +1,7 @@
 title: Retention Radar - Customer Churn Data Prep
 description: >
-  Portfolio project prepping customer and streaming‐history data for churn modeling,
-  including ingestion, cleaning, EDA and feature‐engineering in Python and pandas.
+  Portfolio project prepping customer and streaming-history data for churn modeling,
+  including ingestion, cleaning, EDA and feature-engineering in Python and pandas.
 baseurl: "/retention-radar"
 url: "https://marcin-charzynski.github.io"
 include:
