@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+gem "jekyll", "~> 3.10"
+gem "jekyll-remote-theme"
+gem "jekyll-jupyter-notebook", git: "https://github.com/red-data-tools/jekyll-jupyter-notebook.git"
+gem "kramdown-parser-gfm"
