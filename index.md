@@ -37,14 +37,13 @@ Identify customers at high risk of canceling their subscription based on their s
    - Imputed or removed missing values in key columns (subscription rate , subscription plan)  
    - Engineered new features: tenure_days, avg_listens_per_day, last_month_play_count, genre_diversity_score  
 4. Exploratory analysis  
-   - Profiled each table: distributions of subscription lengths, play counts, churn rates  
-   - Joined on customer_id to correlate listening patterns with cancellations  
-   - Used box plots and density estimates to highlight churner vs. retainer differences  
-   ### Distribution of Listening Sessions  
+   - Discount vs. churn  
+     • Only 7 customers received a discount, and around 86% of them canceled—compared to about 30% churn among non-discount users.  
+   - Distribution of Listening Sessions  
    ![Distribution of Listening Sessions per Customer]({{ site.baseurl }}/assets/images/listening_sessions_distribution.png)  
-   Most users had about 3 unique listening sessions in the last three months, while roughly 20% logged only 1–2 sessions. This low-engagement group warrants further analysis to see if it truly correlates with higher churn and could inform targeted re-engagement strategies.
+      • We counted how many separate listening sessions each user had over three months. Most people fell between 1–5 sessions, suggesting a sizable low-engagement group.  
 
-   ### Genre Popularity  
+   - Genre Popularity  
    | Genre      | Count |
    |------------|------:|
    | Pop        |   267 |
@@ -54,7 +53,7 @@ Identify customers at high risk of canceling their subscription based on their s
    | Comedy     |    19 |
    | True Crime |    15 |
 
-   Pop dominates with more than three times the listens of the next genre. Understanding whether fans of particular genres churn at different rates could uncover new retention levers.
+      • Pop dominates with more than three times the listens of the next genre. Understanding whether fans of particular genres churn at different rates could uncover new retention levers.
 
 5. Final DataFrame prep  
    - Isolated numeric predictors with no nulls  
