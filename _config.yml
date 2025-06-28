@@ -1,4 +1,4 @@
-title: Retention Radar: Customer Churn Data Prep
+title: Retention Radar - Customer Churn Data Prep
 description: >
   Portfolio project prepping customer and streaming‐history data for churn modeling,
   including ingestion, cleaning, EDA and feature‐engineering in Python and pandas.
