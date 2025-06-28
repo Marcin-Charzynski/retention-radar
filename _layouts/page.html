@@ -59,9 +59,16 @@
         </li>
         {% assign baseUrl = site.baseurl %}
         {% assign overviewUrl = baseUrl | append: "/" %}
+        {% assign notebookUrl = baseUrl | append: "/notebook" %}
+        <li>
         <li>
           <a href="{{ overviewUrl }}" class="block py-2 hover:text-indigo-600 {% if page.url == baseUrl or page.url == overviewUrl %}font-bold text-indigo-700{% endif %}">
             Overview
+          </a>
+        </li>
+        <li>
+          <a href="{{ notebookUrl }}" class="block py-2 hover:text-indigo-600 {% if page.url == baseUrl or page.url == notebookUrl %}font-bold text-indigo-700{% endif %}">
+            Notebook
           </a>
         </li>
       </ul>
