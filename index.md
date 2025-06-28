@@ -108,6 +108,17 @@ permalink: /
           <li>Scaled features and flagged high-risk segments (e.g., low-engagement, free-trial users)</li>
           <li>Produced a feature-correlation heatmap against churn</li>
         </ul>
+        <div class="my-6">
+            <img src="{{ site.baseurl }}/assets/images/feature_correlation_heatmap.png"
+                 alt="Feature Correlation Heatmap"
+                 class="w-full rounded-md shadow-sm">
+        </div>
+        <p class="font-semibold">Key correlations:</p>
+        <ul class="list-disc list-inside ml-6">
+          <li><em>Percent Pop vs. Cancelled:</em> 0.586 – higher Pop listen share is strongly linked with churn</li>
+          <li><em>Discount? vs. Cancelled:</em> 0.472 – discounted customers are more likely to cancel</li>
+          <li><em>Number of Sessions vs. Cancelled:</em> –0.334 – more sessions correlate with lower churn</li>
+        </ul>
       </li>
     </ol>
   </section>
