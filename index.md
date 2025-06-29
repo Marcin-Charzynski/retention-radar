@@ -49,21 +49,22 @@ permalink: /
     <ol>
       <li>Project scoping &amp; stakeholder alignment
         <ul>
-          <li>Reviewed goals with Customer Care to confirm data sources and churn definition</li>
-          <li>Clarified deliverables: analysis-ready dataset + exploratory visuals</li>
+          <li>Confirmed churn definition: any customer with non-null Cancellation Date</li>
+          <li>Data sources: customers.csv, listening_history.xlsx (two sheets)</li>
+          <li>Deliverables: cleaned DataFrame + EDA visuals</li>
         </ul>
       </li>
       <li>Data ingestion
         <ul>
           <li>Loaded customer profiles and streaming-history CSVs using Pandas</li>
-          <li>Verified schema, identified missing or invalid entries, then dropped irreparable rows</li>
+          <li>Verified schema, identified missing or invalid entries, then imputed or filled missing values (e.g. defaulted blank plans to ‘Basic (Ads)’, converted ‘Discount?’ flags)</li>
         </ul>
       </li>
       <li>Data cleaning &amp; feature derivation
         <ul>
           <li>Harmonized date fields (subscription start, cancellation) to datetime</li>
           <li>Imputed or removed missing values in key columns (subscription rate , subscription plan)</li>
-          <li>Engineered new features: tenure_days, avg_listens_per_day, last_month_play_count, genre_diversity_score</li>
+          <li>Engineered new features: Number of Sessions, %Pop, %Podcasts, Email cleanup (stripped prefix), Genre normalization ('Pop Music' → 'Pop'), Audio ID split into type & numeric ID</li>
         </ul>
       </li>
       <li>Exploratory analysis
@@ -105,8 +106,8 @@ permalink: /
       <li>Final DataFrame prep
         <ul>
           <li>Isolated numeric predictors with no nulls</li>
-          <li>Scaled features and flagged high-risk segments (e.g., low-engagement, free-trial users)</li>
           <li>Produced a feature-correlation heatmap against churn</li>
+          <li>Merged all numeric predictors (session counts, percent-listens, cancel flag) into a clean modeling DataFrame—ready for scaling and risk-segmentation downstream</li>
         </ul>
         <div class="my-6">
             <img src="{{ site.baseurl }}/assets/images/feature_correlation_heatmap.png"
@@ -128,7 +129,6 @@ permalink: /
     <ul>
       <li>A clean, feature-rich Pandas DataFrame primed for machine learning</li>
       <li>A Jupyter notebook showcasing EDA visualizations  </li>
-      <li>A concise slide deck summarizing top churn drivers and recommended next steps for modeling</li>
     </ul>
   </section>
 
